@@ -1,7 +1,7 @@
 import { userCoords, iniciarGeolocalizacion } from "./geo.js";
 import { actualizarEstadoConexion, renderizarResultados } from "./ui.js";
 
-const API_URL = "https://nutrismart-backend.onrender.com";
+const API_URL = "https://nutrismart-backend-chqy.onrender.com";
 
 // Inicializar servicios nativos
 iniciarGeolocalizacion();
