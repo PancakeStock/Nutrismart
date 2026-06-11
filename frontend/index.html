@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -10,10 +10,8 @@
         theme: {
           extend: {
             colors: {
-              nutriDark:
-                "#0b3925" /* Actualizado al verde oscuro exacto de tu logo corporativo */,
-              nutriLime:
-                "#b4f15a" /* Actualizado al verde lima exacto de tu logo corporativo */,
+              nutriDark: "#003b27" /* Verde pino para botones / textos */,
+              nutriLime: "#b4f15a" /* Verde lima oficial de tus láminas */,
               nutriLight: "#f8fafc" /* Fondo limpio estilo Carriapp */,
             },
           },
@@ -33,7 +31,10 @@
     </style>
   </head>
   <body class="bg-nutriLight text-slate-800 min-h-screen flex flex-col">
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <header
+      class="border-b border-slate-800 sticky top-0 z-50"
+      style="background-color: #0a3321"
+    >
       <div
         class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between"
       >
@@ -44,53 +45,48 @@
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-8 h-8"
+              class="w-7 h-7"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#0b3925"
+              stroke="#003b27"
               stroke-width="2.5"
               stroke-linecap="round"
               stroke-linejoin="round"
             >
-              <path d="M2 10h20" />
+              <circle cx="8" cy="21" r="1" />
+              <circle cx="19" cy="21" r="1" />
               <path
-                d="m17 10-1.5 8.5a2 2 0 0 1-2 1.5H10.5a2 2 0 0 1-2-1.5L7 10"
+                d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
               />
-              <path d="M6 10c0-3 2.5-5 6-5s6 2 6 5" />
-              <path d="M10 14v3" />
-              <path d="M14 14v3" />
             </svg>
           </div>
           <div>
             <span
               class="text-2xl font-extrabold tracking-tight block"
-              style="color: #0b3925"
-              >Nutrismart</span
+              style="color: #fff"
+              >Nutri<span style="color: #b4f15a">smart</span></span
             >
             <span
-              class="text-[10px] text-slate-400 font-semibold tracking-wider uppercase -mt-1 block"
+              class="text-[10px] text-slate-300 font-semibold tracking-wider uppercase -mt-1 block"
               >UAI · Grupo 9</span
             >
           </div>
         </div>
 
         <div
-          class="hidden md:flex items-center gap-2 text-sm font-semibold text-nutriDark/80"
+          class="hidden md:flex items-center gap-2 text-sm font-semibold text-white/90"
         >
-          <span class="bg-nutriDark text-white px-2 py-0.5 rounded text-xs"
-            >Slogan</span
-          >
           <span>Come mejor. Gasta menos. Desperdicia nada.</span>
         </div>
 
         <div
-          class="flex items-center gap-2 bg-slate-100 px-4 py-2 rounded-full border border-slate-200"
+          class="flex items-center gap-2 bg-[#002518] px-4 py-2 rounded-full border border-emerald-950"
         >
           <div
             id="status-dot"
             class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"
           ></div>
-          <span id="status-text" class="text-xs font-bold text-slate-600"
+          <span id="status-text" class="text-xs font-bold text-slate-300"
             >Conectando...</span
           >
         </div>
@@ -101,7 +97,7 @@
       class="flex-1 max-w-7xl w-full mx-auto p-4 md:p-8 grid md:grid-cols-3 gap-8"
     >
       <section
-        class="md:col-span-1 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm h-fit space-y-6"
+        class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm h-fit space-y-6"
       >
         <div>
           <h2 class="text-xl font-bold text-nutriDark flex items-center gap-2">
@@ -147,7 +143,7 @@
 
           <button
             type="submit"
-            class="w-full bg-nutriDark hover:bg-emerald-900 text-white font-bold p-3.5 rounded-xl transition-all shadow-md shadow-emerald-950/10 flex items-center justify-center gap-2 group"
+            class="w-full bg-[#003b27] hover:bg-[#002518] text-white font-bold p-3.5 rounded-xl transition-all shadow-md shadow-emerald-950/10 flex items-center justify-center gap-2 group"
           >
             <span>Optimizar Presupuesto</span>
             <svg
@@ -203,9 +199,12 @@
             class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"
           >
             <h3
-              class="text-lg font-bold text-nutriDark mb-4 flex items-center gap-2"
+              class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2"
             >
-              <span class="w-2 h-5 bg-nutriLime rounded-full block"></span>
+              <span
+                class="w-2 h-5 bg-nutriLime rounded-full block"
+                style="background-color: #b4f15a"
+              ></span>
               Minuta Semanal Sugerida
             </h3>
             <div id="dieta-container" class="grid sm:grid-cols-2 gap-3"></div>
@@ -215,9 +214,12 @@
             class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"
           >
             <h3
-              class="text-lg font-bold text-nutriDark mb-4 flex items-center gap-2"
+              class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2"
             >
-              <span class="w-2 h-5 bg-nutriLime rounded-full block"></span>
+              <span
+                class="w-2 h-5 bg-nutriLime rounded-full block"
+                style="background-color: #b4f15a"
+              ></span>
               Análisis Comparativo de Cadenas (CL)
             </h3>
             <div class="overflow-x-auto">
@@ -242,7 +244,12 @@
               id="ganador-card"
               class="mt-6 bg-emerald-50 border-2 border-emerald-500/20 p-5 rounded-xl flex items-start gap-4"
             >
-              <div class="bg-nutriDark text-nutriLime p-2.5 rounded-xl">🏆</div>
+              <div
+                class="text-white p-2.5 rounded-xl"
+                style="background-color: #003b27"
+              >
+                🏆
+              </div>
               <div>
                 <h4
                   class="text-emerald-900 font-extrabold text-sm uppercase tracking-wider"
@@ -262,7 +269,7 @@
 
       const statusDot = document.getElementById("status-dot");
       const statusText = document.getElementById("status-text");
-      let userCoords = { lat: -33.4126, lng: -70.6018 }; // Coordenadas por defecto (Santiago)
+      let userCoords = { lat: -33.4126, lng: -70.6018 };
 
       // 1. Monitoreo de conectividad con el Backend en Render
       fetch(`${API_URL}/api/health`)
@@ -270,13 +277,13 @@
         .then((data) => {
           statusDot.className = "w-2.5 h-2.5 rounded-full bg-emerald-500";
           statusText.innerText = "Online";
-          statusText.className = "text-xs font-bold text-emerald-600";
+          statusText.className = "text-xs font-bold text-emerald-400";
         })
         .catch((err) => {
           statusDot.className =
             "w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping";
           statusText.innerText = "Error de Servidor";
-          statusText.className = "text-xs font-bold text-rose-600";
+          statusText.className = "text-xs font-bold text-rose-500";
         });
 
       // 2. Consulta de geolocalización nativa del navegador
@@ -321,7 +328,6 @@
 
             const data = await response.json();
 
-            // Gestión de paneles en la interfaz
             document.getElementById("no-data").classList.add("hidden");
             document.getElementById("results").classList.remove("hidden");
 
@@ -331,7 +337,7 @@
             Object.entries(data.dieta).forEach(([comida, detalle]) => {
               dietaContainer.innerHTML += `
                       <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
-                          <strong class="text-xs text-nutriDark/60 uppercase block font-extrabold tracking-wide">${comida}</strong>
+                          <strong class="text-xs uppercase block font-extrabold tracking-wide" style="color: #003b27;">${comida}</strong>
                           <span class="text-slate-700 text-sm font-semibold">${detalle}</span>
                       </div>
                   `;
@@ -360,7 +366,7 @@
 
             // Renderizado de la recomendación destacada
             document.getElementById("ganador-text").innerHTML = `
-                  Conviene comprar en <strong class="text-nutriDark">${data.recomendacion.supermercado}</strong>.
+                  Conviene comprar en <strong style="color: #003b27;">${data.recomendacion.supermercado}</strong>.
                   El gasto mensual proporcional será de <strong>$${data.recomendacion.costo_mensual_estimado.toLocaleString("es-CL")}</strong>
                   estando a solo <strong>${data.recomendacion.distancia_km} km</strong> de tu ubicación.
               `;
