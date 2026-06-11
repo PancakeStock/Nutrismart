@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nutrismart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-slate-900 text-white flex flex-col items-center justify-center min-h-screen"
+  >
+    <h1 class="text-4xl font-bold text-emerald-400">🥑 Nutrismart</h1>
+    <p class="text-slate-400 mt-2">Estado de la conexión:</p>
+    <p id="status" class="text-xl font-bold mt-2 text-yellow-400">
+      Conectando al servidor...
+    </p>
+
+    <script>
+      // Esta variable la cambiaremos pronto por la URL real de Render
+      const API_URL = "http://localhost:5000";
+
+      fetch(`${API_URL}/api/health`)
+        .then((res) => res.json())
+        .then((data) => {
+          document.getElementById("status").innerText = data.message;
+          document.getElementById("status").className =
+            "text-xl font-bold mt-2 text-green-400";
+        })
+        .catch((err) => {
+          document.getElementById("status").innerText =
+            "Error: Backend desconectado o cargando.";
+          document.getElementById("status").className =
+            "text-xl font-bold mt-2 text-red-400";
+        });
+    </script>
+  </body>
+</html>
