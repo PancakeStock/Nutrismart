@@ -10,8 +10,10 @@
         theme: {
           extend: {
             colors: {
-              nutriDark: "#064e3b" /* Verde oscuro de tu presentación */,
-              nutriLime: "#a3e635" /* Verde lima de tus iconos */,
+              nutriDark:
+                "#0b3925" /* Actualizado al verde oscuro exacto de tu logo corporativo */,
+              nutriLime:
+                "#b4f15a" /* Actualizado al verde lima exacto de tu logo corporativo */,
               nutriLight: "#f8fafc" /* Fondo limpio estilo Carriapp */,
             },
           },
@@ -36,27 +38,33 @@
         class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between"
       >
         <div class="flex items-center gap-3">
-          <div class="bg-nutriLime p-2.5 rounded-full text-nutriDark shadow-sm">
+          <div
+            class="w-14 h-14 rounded-full flex items-center justify-center shadow-inner flex-shrink-0"
+            style="background-color: #b4f15a"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-7 h-7"
+              class="w-8 h-8"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="currentColor"
+              stroke="#0b3925"
               stroke-width="2.5"
               stroke-linecap="round"
               stroke-linejoin="round"
             >
-              <path d="m15 11-1 9H10l-1-9Z" />
+              <path d="M2 10h20" />
               <path
-                d="M4 11h16a1 1 0 0 1 1 1v1a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4v-1a1 1 0 0 1 1-1Z"
+                d="m17 10-1.5 8.5a2 2 0 0 1-2 1.5H10.5a2 2 0 0 1-2-1.5L7 10"
               />
-              <path d="M6 11V7a4 4 0 0 1 8 0v4" />
+              <path d="M6 10c0-3 2.5-5 6-5s6 2 6 5" />
+              <path d="M10 14v3" />
+              <path d="M14 14v3" />
             </svg>
           </div>
           <div>
             <span
-              class="text-2xl font-extrabold text-nutriDark tracking-tight block"
+              class="text-2xl font-extrabold tracking-tight block"
+              style="color: #0b3925"
               >Nutrismart</span
             >
             <span
@@ -139,7 +147,7 @@
 
           <button
             type="submit"
-            class="w-full bg-nutriDark hover:bg-emerald-800 text-white font-bold p-3.5 rounded-xl transition-all shadow-md shadow-emerald-900/10 flex items-center justify-center gap-2 group"
+            class="w-full bg-nutriDark hover:bg-emerald-900 text-white font-bold p-3.5 rounded-xl transition-all shadow-md shadow-emerald-950/10 flex items-center justify-center gap-2 group"
           >
             <span>Optimizar Presupuesto</span>
             <svg
@@ -250,115 +258,121 @@
     </main>
 
     <script>
-      // CAMBIA ESTA URL por la real de tu Render (sin la barra / al final)
       const API_URL = "https://nutrismart-backend.onrender.com";
 
-      const statusDot = document.getElementById('status-dot');
-      const statusText = document.getElementById('status-text');
-      let userCoords = { lat: -33.4126, lng: -70.6018 }; // Default Santiago UAI
+      const statusDot = document.getElementById("status-dot");
+      const statusText = document.getElementById("status-text");
+      let userCoords = { lat: -33.4126, lng: -70.6018 }; // Coordenadas por defecto (Santiago)
 
-      // 1. Probar salud del backend e impactar la UI
+      // 1. Monitoreo de conectividad con el Backend en Render
       fetch(`${API_URL}/api/health`)
-          .then(res => res.json())
-          .then(data => {
-              statusDot.className = "w-2.5 h-2.5 rounded-full bg-emerald-500";
-              statusText.innerText = "Online";
-              statusText.className = "text-xs font-bold text-emerald-600";
-          })
-          .catch(err => {
-              statusDot.className = "w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping";
-              statusText.innerText = "Error de Servidor";
-              statusText.className = "text-xs font-bold text-rose-600";
-          });
+        .then((res) => res.json())
+        .then((data) => {
+          statusDot.className = "w-2.5 h-2.5 rounded-full bg-emerald-500";
+          statusText.innerText = "Online";
+          statusText.className = "text-xs font-bold text-emerald-600";
+        })
+        .catch((err) => {
+          statusDot.className =
+            "w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping";
+          statusText.innerText = "Error de Servidor";
+          statusText.className = "text-xs font-bold text-rose-600";
+        });
 
-      // 2. Intentar geolocalización nativa
+      // 2. Consulta de geolocalización nativa del navegador
       if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(
-              pos => {
-                  userCoords.lat = pos.coords.latitude;
-                  userCoords.lng = pos.coords.longitude;
-                  console.log("Ubicación real capturada:", userCoords);
-              },
-              err => console.log("Permiso denegado, usando coordenadas de Santiago por defecto.")
-          );
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            userCoords.lat = pos.coords.latitude;
+            userCoords.lng = pos.coords.longitude;
+            console.log("Ubicación capturada con éxito:", userCoords);
+          },
+          (err) =>
+            console.log(
+              "Permiso de ubicación omitido, usando fallback de Santiago.",
+            ),
+        );
       }
 
-      // 3. Manejo del Formulario y renderizado
-      document.getElementById('diet-form').addEventListener('submit', async (e) => {
+      // 3. Envío de formulario y procesamiento de respuesta
+      document
+        .getElementById("diet-form")
+        .addEventListener("submit", async (e) => {
           e.preventDefault();
 
-          const objetivo = document.getElementById('objetivo').value;
-          const presupuesto = document.getElementById('presupuesto').value;
+          const objetivo = document.getElementById("objetivo").value;
+          const presupuesto = document.getElementById("presupuesto").value;
 
-          // Mostrar estado cargando en el botón
-          const btn = e.target.querySelector('button');
+          const btn = e.target.querySelector("button");
           btn.innerText = "Calculando Ingeniería de Precios...";
           btn.disabled = true;
 
           try {
-              const response = await fetch(`${API_URL}/api/planificar`, {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({
-                      objetivo: objetivo,
-                      presupuesto: presupuesto,
-                      lat: userCoords.lat,
-                      lng: userCoords.lng
-                  })
-              });
+            const response = await fetch(`${API_URL}/api/planificar`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                objetivo: objetivo,
+                presupuesto: presupuesto,
+                lat: userCoords.lat,
+                lng: userCoords.lng,
+              }),
+            });
 
-              const data = await response.json();
+            const data = await response.json();
 
-              // Switch de vistas
-              document.getElementById('no-data').classList.add('hidden');
-              document.getElementById('results').classList.remove('hidden');
+            // Gestión de paneles en la interfaz
+            document.getElementById("no-data").classList.add("hidden");
+            document.getElementById("results").classList.remove("hidden");
 
-              # Rellenar la Dieta
-              const dietaContainer = document.getElementById('dieta-container');
-              dietaContainer.innerHTML = '';
-              Object.entries(data.dieta).forEach(([comida, detalle]) => {
-                  dietaContainer.innerHTML += `
+            // Inyección de la Minuta Semanal
+            const dietaContainer = document.getElementById("dieta-container");
+            dietaContainer.innerHTML = "";
+            Object.entries(data.dieta).forEach(([comida, detalle]) => {
+              dietaContainer.innerHTML += `
                       <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
                           <strong class="text-xs text-nutriDark/60 uppercase block font-extrabold tracking-wide">${comida}</strong>
                           <span class="text-slate-700 text-sm font-semibold">${detalle}</span>
                       </div>
                   `;
-              });
+            });
 
-              # Rellenar la Tabla
-              const tablaBody = document.getElementById('tabla-body');
-              tablaBody.innerHTML = '';
-              data.comparativa.forEach(item => {
-                  const esGanador = item.supermercado === data.recomendacion.supermercado;
-                  tablaBody.innerHTML += `
-                      <tr class="${esGanador ? 'bg-emerald-50/50 text-emerald-900 font-bold' : ''}">
+            // Inyección de la Tabla Comparativa
+            const tablaBody = document.getElementById("tabla-body");
+            tablaBody.innerHTML = "";
+            data.comparativa.forEach((item) => {
+              const esGanador =
+                item.supermercado === data.recomendacion.supermercado;
+              tablaBody.innerHTML += `
+                      <tr class="${esGanador ? "bg-emerald-50/50 text-emerald-900 font-bold" : ""}">
                           <td class="py-3 px-2 flex items-center gap-2">
-                              ${esGanador ? '✅' : '🏢'} ${item.supermercado}
+                              ${esGanador ? "✅" : "🏢"} ${item.supermercado}
                           </td>
                           <td class="py-3 text-right text-slate-900 font-bold px-2">
-                              $${item.costo_mensual_estimado.toLocaleString('es-CL')}
+                              $${item.costo_mensual_estimado.toLocaleString("es-CL")}
                           </td>
                           <td class="py-3 text-right text-slate-500 px-2">
                               ${item.distancia_km} km
                           </td>
                       </tr>
                   `;
-              });
+            });
 
-              # Mensaje destacado ganador
-              document.getElementById('ganador-text').innerHTML = `
+            // Renderizado de la recomendación destacada
+            document.getElementById("ganador-text").innerHTML = `
                   Conviene comprar en <strong class="text-nutriDark">${data.recomendacion.supermercado}</strong>.
-                  El gasto mensual proporcional será de <strong>$${data.recomendacion.costo_mensual_estimado.toLocaleString('es-CL')}</strong>
+                  El gasto mensual proporcional será de <strong>$${data.recomendacion.costo_mensual_estimado.toLocaleString("es-CL")}</strong>
                   estando a solo <strong>${data.recomendacion.distancia_km} km</strong> de tu ubicación.
               `;
-
           } catch (err) {
-              alert("Hubo un problema al conectar con el motor matemático en Render.");
+            alert(
+              "Hubo un problema al conectar con el motor matemático en Render.",
+            );
           } finally {
-              btn.innerText = "Optimizar Presupuesto";
-              btn.disabled = false;
+            btn.innerText = "Optimizar Presupuesto";
+            btn.disabled = false;
           }
-      });
+        });
     </script>
   </body>
 </html>
