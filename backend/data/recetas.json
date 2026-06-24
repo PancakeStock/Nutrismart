@@ -1,0 +1,416 @@
+[
+  {
+    "nombre_receta": "Crema de Coliflor",
+    "tipo_comida": "Cena",
+    "objetivo": "bajar_grasa",
+    "tiempo_estimado_minutos": 35,
+    "preparacion": "Tostar almendras, dorar cebolla, hervir coliflor junto a la pechuga en caldo por 25 min y licuar todo.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Coliflor Entera",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.125,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Cebolla Entera",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.16,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Almendras",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.033,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Pechuga de Pollo",
+        "categoria_macro": "proteina",
+        "cantidad_numerica": 0.1,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Cebollín Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.33,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Aceite Vegetal",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 7.5,
+        "unidad_medida": "ml"
+      }
+    ]
+  },
+  {
+    "nombre_receta": "Pescado a la Mexicana",
+    "tipo_comida": "Almuerzo",
+    "objetivo": "bajar_grasa",
+    "tiempo_estimado_minutos": 20,
+    "preparacion": "Preparar salsa sofrita con vegetales y condimentos, añadir pescado y queso hasta cocer.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Filete de Pescado Magro",
+        "categoria_macro": "proteina",
+        "cantidad_numerica": 0.15,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Tomate Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.5,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Cebolla Entera",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.25,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Queso Mantecoso",
+        "categoria_macro": "proteina",
+        "cantidad_numerica": 0.012,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Salsa de Tomate",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 3.75,
+        "unidad_medida": "ml"
+      },
+      {
+        "nombre_comercial": "Jugo de Limón",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 3.75,
+        "unidad_medida": "ml"
+      },
+      {
+        "nombre_comercial": "Aceite Vegetal",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 7.5,
+        "unidad_medida": "ml"
+      }
+    ]
+  },
+  {
+    "nombre_receta": "Puré de Papas con Albahaca",
+    "tipo_comida": "Almuerzo",
+    "objetivo": "subir_masa",
+    "tiempo_estimado_minutos": 30,
+    "preparacion": "Cocer papas y hacer puré, mezclar con albahaca blanqueada y licuada con aceite y cebolla.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Papa Entera",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.125,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Albahaca Fresca",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.025,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Cebolla Morada",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.06,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Tomate Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.5,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Aceite de Oliva",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 25,
+        "unidad_medida": "ml"
+      }
+    ]
+  },
+  {
+    "nombre_receta": "Berenjenas con Zapallitos y Tomates",
+    "tipo_comida": "Cena",
+    "objetivo": "bajar_grasa",
+    "tiempo_estimado_minutos": 25,
+    "preparacion": "Saltear berenjenas, zapallitos y ajo, agregar tomate y cocinar tapado por 20 minutos.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Berenjena Entera",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.33,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Zapallito Italiano Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.5,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Tomate Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.66,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Ajo Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.16,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Aceite Vegetal",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 8.3,
+        "unidad_medida": "ml"
+      }
+    ]
+  },
+  {
+    "nombre_receta": "Ensalada Oriental",
+    "tipo_comida": "Almuerzo",
+    "objetivo": "bajar_grasa",
+    "tiempo_estimado_minutos": 15,
+    "preparacion": "Mezclar vegetales en corte juliana con la proteína y aderezar con mezcla de soya, vinagre y aceite.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Pechuga de Pollo",
+        "categoria_macro": "proteina",
+        "cantidad_numerica": 0.12,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Dientes de Dragón",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.02,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Lechuga Entera",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.02,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Zanahoria Entera",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.1,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Cebollín Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.4,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Aceite Vegetal",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 9,
+        "unidad_medida": "ml"
+      }
+    ]
+  },
+  {
+    "nombre_receta": "Sándwich Atún con Palta",
+    "tipo_comida": "Desayuno-Once",
+    "objetivo": "subir_masa",
+    "tiempo_estimado_minutos": 5,
+    "preparacion": "Hacer pasta con palta, atún y ciboulette, y servir sobre rebanadas de pan tostado.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Pan Integral",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.06,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Atún en Conserva al Agua",
+        "categoria_macro": "proteina",
+        "cantidad_numerica": 0.04,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Palta Entera",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.03,
+        "unidad_medida": "kg"
+      }
+    ]
+  },
+  {
+    "nombre_receta": "Quesadilla de Pollo y Piña",
+    "tipo_comida": "Cena",
+    "objetivo": "subir_masa",
+    "tiempo_estimado_minutos": 15,
+    "preparacion": "Rellenar tortilla con pollo cocido, piña y queso, y dorar en sartén hasta derretir el queso.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Tortilla de Trigo",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 1,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Pechuga de Pollo",
+        "categoria_macro": "proteina",
+        "cantidad_numerica": 0.08,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Piña en Conserva o Fresca",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 2,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Queso Mantecoso",
+        "categoria_macro": "proteina",
+        "cantidad_numerica": 0.05,
+        "unidad_medida": "kg"
+      }
+    ]
+  },
+  {
+    "nombre_receta": "Ensalada Criolla",
+    "tipo_comida": "Almuerzo",
+    "objetivo": "bajar_grasa",
+    "tiempo_estimado_minutos": 15,
+    "preparacion": "Mezclar hojas verdes con vegetales picados, coronar con huevo duro y aliñar con vinagreta.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Huevo",
+        "categoria_macro": "huevos_unidades",
+        "cantidad_numerica": 1,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Lechuga Entera",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.08,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Espinaca Fresca",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.016,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Palta Entera",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.16,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Tomate Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.16,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Cebollín Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.08,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Aceite Vegetal",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 10,
+        "unidad_medida": "ml"
+      }
+    ]
+  },
+  {
+    "nombre_receta": "Ensalada Don Fausto",
+    "tipo_comida": "Cena",
+    "objetivo": "bajar_grasa",
+    "tiempo_estimado_minutos": 15,
+    "preparacion": "Cortar vegetales en cubos y disponer en capas, bañando finalmente con vinagreta.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Tomate Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.066,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Palta Entera",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.05,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Choclo en Grano",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.05,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Cebollín Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.004,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Aceite Vegetal",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 7.5,
+        "unidad_medida": "ml"
+      }
+    ]
+  },
+  {
+    "nombre_receta": "Quesadilla con Verduras",
+    "tipo_comida": "Cena",
+    "objetivo": "bajar_grasa",
+    "tiempo_estimado_minutos": 20,
+    "preparacion": "Saltear vegetales, rellenar la tortilla junto al queso y calentar en sartén.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Tortilla de Trigo",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 1,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Queso Mantecoso",
+        "categoria_macro": "proteina",
+        "cantidad_numerica": 0.05,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Zapallito Italiano Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.5,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Pimiento Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.5,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Tomate Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.5,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Cebolla Entera",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.25,
+        "unidad_medida": "un"
+      }
+    ]
+  }
+]
