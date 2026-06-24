@@ -14,7 +14,6 @@ document.getElementById("diet-form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const objetivo = document.getElementById("objetivo").value;
-  const presupuesto = document.getElementById("presupuesto").value;
   const periodo = document.getElementById("periodo").value;
   const btn = e.target.querySelector("button");
 
@@ -27,7 +26,6 @@ document.getElementById("diet-form").addEventListener("submit", async (e) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         objetivo: objetivo,
-        presupuesto: presupuesto,
         periodo: periodo,
         lat: userCoords.lat,
         lng: userCoords.lng,

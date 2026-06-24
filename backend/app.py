@@ -15,11 +15,12 @@ def planificar():
     data = request.get_json() or {}
     
     objetivo = data.get("objetivo", "bajar_grasa")
+    periodo  = data.get("periodo", "semana")
     user_lat = float(data.get("lat", -33.4126))
     user_lng = float(data.get("lng", -70.6018))
-    
+
     # Llamamos al módulo optimizador
-    resultado = optimizar_canasta(objetivo, user_lat, user_lng)
+    resultado = optimizar_canasta(objetivo, user_lat, user_lng, periodo)
     
     return jsonify(resultado), 200
 

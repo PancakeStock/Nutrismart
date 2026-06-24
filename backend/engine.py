@@ -421,11 +421,18 @@ def _formatear_cantidad_compra(nombre: str, cant_neta: float, unidad_receta: str
     else:
         cantidad_compra = int(cantidad_compra)
 
+    # Etiqueta final: si se necesita más de 1 empaque, indicarlo explícitamente
+    if n_empaques > 1:
+        etiqueta_final = f"{n_empaques} × {etiq}"
+    else:
+        etiqueta_final = etiq
+
     return {
-        "ingrediente": nombre,
-        "cantidad":    cantidad_compra,
-        "unidad":      unidad,
-        "etiqueta":    etiq,
+        "ingrediente":  nombre,
+        "cantidad":     cantidad_compra,
+        "unidad":       unidad,
+        "etiqueta":     etiqueta_final,
+        "n_empaques":   n_empaques,
     }
 
 
@@ -441,8 +448,15 @@ def optimizar_canasta(
 ) -> dict:
 
     duracion_dias = 7 if periodo == "semana" else 30
-    dias_nombres  = ["Lunes", "Martes", "Miércoles", "Jueves",
-                     "Viernes", "Sábado", "Domingo"]
+    _base = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
+    if duracion_dias <= 7:
+        dias_nombres = _base
+    else:
+        # Para 30 días generamos etiquetas "Semana N · Lunes", etc.
+        dias_nombres = [
+            f"Sem {(i // 7) + 1} · {_base[i % 7]}"
+            for i in range(duracion_dias)
+        ]
 
     # --- Carga de datos ---
     recetas   = cargar_recetas_por_objetivo(objetivo)
