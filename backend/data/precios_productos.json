@@ -1,53 +1,173 @@
 {
-    "Lider Expres de Grecia": [
-        {
-            "nombre": "Pechuga de Pollo Deshuesada Lider 1kg",
-            "precio": 4590,
-            "categoria": "proteina"
-        },
-        {
-            "nombre": "Avena Integral Instantánea Lider 1kg",
-            "precio": 1990,
-            "categoria": "carbohidrato"
-        },
-        {
-            "nombre": "Huevos Blancos Grandes Lider 30 uds",
-            "precio": 195,
-            "categoria": "huevos_unidades"
-        }
-    ],
-    "Jumbo Paseo Los Dominicos": [
-        {
-            "nombre": "Pechuga de Pollo Cordon Bleu 1kg",
-            "precio": 5490,
-            "categoria": "proteina"
-        },
-        {
-            "nombre": "Avena Integral Jumbo Multi-semillas 1kg",
-            "precio": 2490,
-            "categoria": "carbohidrato"
-        },
-        {
-            "nombre": "Huevos de Gallina Libre Jumbo 30 uds",
-            "precio": 225,
-            "categoria": "huevos_unidades"
-        }
-    ],
-    "Unimarc Príncipe de Gales": [
-        {
-            "nombre": "Filetitos de Pollo Familiar Unimarc 1kg",
-            "precio": 4990,
-            "categoria": "proteina"
-        },
-        {
-            "nombre": "Avena Tradicional Bolsa Unimarc 1kg",
-            "precio": 2190,
-            "categoria": "carbohidrato"
-        },
-        {
-            "nombre": "Huevos Medianos Unimarc 30 uds",
-            "precio": 205,
-            "categoria": "huevos_unidades"
-        }
-    ]
+  "Lider Expres de Grecia": [
+    {
+      "nombre": "Pechuga de Pollo / Filetitos",
+      "precio": 4590,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Jurel en Conserva / Atún",
+      "precio": 1250,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Filete de Pescado Magro / Lapas",
+      "precio": 6990,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Quesillo Fresco / Queso Mantecoso",
+      "precio": 7490,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Leche Entera / Descremada Lider 1L",
+      "precio": 1050,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Yogurt Natural Lider",
+      "precio": 2890,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Avena / Harina / Masas / Pan Integral",
+      "precio": 1990,
+      "categoria": "carbohidrato"
+    },
+    {
+      "nombre": "Mix Verduras / Tomate / Cebolla / Coliflor",
+      "precio": 2190,
+      "categoria": "carbohidrato"
+    },
+    {
+      "nombre": "Frutos Rojos / Duraznos / Melón / Piña",
+      "precio": 4290,
+      "categoria": "carbohidrato"
+    },
+    {
+      "nombre": "Aceite Vegetal / Oliva / Salsas / Vinagre",
+      "precio": 3290,
+      "categoria": "carbohidrato"
+    },
+    {
+      "nombre": "Huevos Blancos Grandes Lider (Por Unidad)",
+      "precio": 195,
+      "categoria": "huevos_unidades"
+    }
+  ],
+  "Jumbo Paseo Los Dominicos": [
+    {
+      "nombre": "Pechuga de Pollo / Filetitos Jumbo",
+      "precio": 5490,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Jurel en Conserva / Atún Premium",
+      "precio": 1690,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Filete de Pescado Magro / Lapas Frescas",
+      "precio": 8990,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Quesillo Fresco / Queso Mantecoso Jumbo",
+      "precio": 8990,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Leche Entera / Descremada Jumbo 1L",
+      "precio": 1190,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Yogurt Natural Colun Jumbo",
+      "precio": 3490,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Avena / Harina / Masas / Pan Integral Jumbo",
+      "precio": 2490,
+      "categoria": "carbohidrato"
+    },
+    {
+      "nombre": "Mix Verduras / Tomate / Cebolla / Coliflor",
+      "precio": 2890,
+      "categoria": "carbohidrato"
+    },
+    {
+      "nombre": "Frutos Rojos / Duraznos / Melón / Piña",
+      "precio": 5490,
+      "categoria": "carbohidrato"
+    },
+    {
+      "nombre": "Aceite Vegetal / Oliva / Salsas / Vinagre",
+      "precio": 4190,
+      "categoria": "carbohidrato"
+    },
+    {
+      "nombre": "Huevos de Gallina Libre Jumbo (Por Unidad)",
+      "precio": 225,
+      "categoria": "huevos_unidades"
+    }
+  ],
+  "Unimarc Príncipe de Gales": [
+    {
+      "nombre": "Pechuga de Pollo / Filetitos Unimarc",
+      "precio": 4990,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Jurel en Conserva / Atún Van Camps",
+      "precio": 1490,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Filete de Pescado Magro / Lapas Unimarc",
+      "precio": 7990,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Quesillo Fresco / Queso Mantecoso Unimarc",
+      "precio": 8190,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Leche Entera / Descremada Soprole 1L",
+      "precio": 1120,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Yogurt Natural Next Unimarc",
+      "precio": 3190,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Avena / Harina / Masas / Pan Integral",
+      "precio": 2190,
+      "categoria": "carbohidrato"
+    },
+    {
+      "nombre": "Mix Verduras / Tomate / Cebolla / Coliflor",
+      "precio": 2490,
+      "categoria": "carbohidrato"
+    },
+    {
+      "nombre": "Frutos Rojos / Duraznos / Melón / Piña",
+      "precio": 4890,
+      "categoria": "carbohidrato"
+    },
+    {
+      "nombre": "Aceite Vegetal / Oliva / Salsas / Vinagre",
+      "precio": 3790,
+      "categoria": "carbohidrato"
+    },
+    {
+      "nombre": "Huevos Medianos Unimarc (Por Unidad)",
+      "precio": 205,
+      "categoria": "huevos_unidades"
+    }
+  ]
 }

@@ -412,5 +412,413 @@
         "unidad_medida": "un"
       }
     ]
+  },
+  {
+    "nombre_receta": "Ensalada Caprese",
+    "tipo_comida": "Cena",
+    "objetivo": "bajar_grasa",
+    "tiempo_estimado_minutos": 10,
+    "preparacion": "Cortar el tomate y el quesillo en rodajas, intercalar en el plato y aliñar con aceite, sal y hojas de albahaca.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Tomate Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.5,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Quesillo Fresco",
+        "categoria_macro": "proteina",
+        "cantidad_numerica": 0.037,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Albahaca Fresca",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.005,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Aceite de Oliva",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 3.75,
+        "unidad_medida": "ml"
+      }
+    ]
+  },
+  {
+    "nombre_receta": "Sándwich Chacarero con Champiñones",
+    "tipo_comida": "Desayuno-Once",
+    "objetivo": "subir_masa",
+    "tiempo_estimado_minutos": 15,
+    "preparacion": "Rellenar el pan marraqueta con porotos verdes cocidos, rodajas de tomate, champiñones salteados y ají verde.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Pan Marraqueta",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.1,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Porotos Verdes Congelados",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.03,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Tomate Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.5,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Champiñones Frescos",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.015,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Ají Verde",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.1,
+        "unidad_medida": "un"
+      }
+    ]
+  },
+  {
+    "nombre_receta": "Budín de Jurel",
+    "tipo_comida": "Almuerzo",
+    "objetivo": "subir_masa",
+    "tiempo_estimado_minutos": 35,
+    "preparacion": "Mezclar jurel desmenuzado con pan remojado en leche, huevo, cebolla salteada y hornear hasta dorar.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Jurel en Conserva",
+        "categoria_macro": "proteina",
+        "cantidad_numerica": 0.075,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Pan Marraqueta",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.06,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Leche Entera",
+        "categoria_macro": "proteina",
+        "cantidad_numerica": 25,
+        "unidad_medida": "ml"
+      },
+      {
+        "nombre_comercial": "Huevo",
+        "categoria_macro": "huevos_unidades",
+        "cantidad_numerica": 0.5,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Cebolla Entera",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.05,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Aceite Vegetal",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 2.5,
+        "unidad_medida": "ml"
+      }
+    ]
+  },
+  {
+    "nombre_receta": "Ensalada de Ulte con Salmón",
+    "tipo_comida": "Almuerzo",
+    "objetivo": "bajar_grasa",
+    "tiempo_estimado_minutos": 25,
+    "preparacion": "Hornear salmón en cubos por 5 minutos, mezclar con ulte cocido, espinaca, vegetales picados y aderezar.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Salmón Fresco",
+        "categoria_macro": "proteina",
+        "cantidad_numerica": 0.1,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Ulte Cocido",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.03,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Espinaca Fresca",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.1,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Cebollín Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.2,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Pimiento Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.2,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Huevo",
+        "categoria_macro": "huevos_unidades",
+        "cantidad_numerica": 0.4,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Jugo de Limón",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 10,
+        "unidad_medida": "ml"
+      },
+      {
+        "nombre_comercial": "Aceite de Oliva",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 4.5,
+        "unidad_medida": "ml"
+      }
+    ]
+  },
+  {
+    "nombre_receta": "Choritos en Salsa Verde",
+    "tipo_comida": "Cena",
+    "objetivo": "bajar_grasa",
+    "tiempo_estimado_minutos": 20,
+    "preparacion": "Mezclar los choritos cocidos con huevo duro rallado, cebolla fina y aliñar con aceite, vino blanco y limón.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Choritos Congelados o Frescos",
+        "categoria_macro": "proteina",
+        "cantidad_numerica": 0.2,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Cebolla Entera",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.2,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Huevo",
+        "categoria_macro": "huevos_unidades",
+        "cantidad_numerica": 0.3,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Vino Blanco",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 40,
+        "unidad_medida": "ml"
+      },
+      {
+        "nombre_comercial": "Aceite de Oliva",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 4.5,
+        "unidad_medida": "ml"
+      },
+      {
+        "nombre_comercial": "Jugo de Limón",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 5,
+        "unidad_medida": "ml"
+      }
+    ]
+  },
+  {
+    "nombre_receta": "Pannacotta de Frutos Rojos",
+    "tipo_comida": "Desayuno-Once",
+    "objetivo": "bajar_grasa",
+    "tiempo_estimado_minutos": 15,
+    "preparacion": "Calentar leche sin hervir, disolver gelatina, incorporar yogurt y servir coronado con frutos rojos molidos.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Leche Descremada",
+        "categoria_macro": "proteina",
+        "cantidad_numerica": 100,
+        "unidad_medida": "ml"
+      },
+      {
+        "nombre_comercial": "Yogurt Natural",
+        "categoria_macro": "proteina",
+        "cantidad_numerica": 0.062,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Frutos Rojos Congelados",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.04,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Gelatina sin Sabor",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.002,
+        "unidad_medida": "kg"
+      }
+    ]
+  },
+  {
+    "nombre_receta": "Ceviche de Lapas y Champiñones",
+    "tipo_comida": "Cena",
+    "objetivo": "bajar_grasa",
+    "tiempo_estimado_minutos": 25,
+    "preparacion": "Hervir lapas 6 minutos, cortar fino y marinar con champiñones, vegetales, limón, vinagre y aceite.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Lapas Frescas",
+        "categoria_macro": "proteina",
+        "cantidad_numerica": 0.1,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Champiñones Frescos",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.03,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Cebolla Entera",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.2,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Pimiento Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.2,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Jugo de Limón",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 20,
+        "unidad_medida": "ml"
+      },
+      {
+        "nombre_comercial": "Aceite de Oliva",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 7.5,
+        "unidad_medida": "ml"
+      }
+    ]
+  },
+  {
+    "nombre_receta": "Flan de Frutillas",
+    "tipo_comida": "Desayuno-Once",
+    "objetivo": "bajar_grasa",
+    "tiempo_estimado_minutos": 20,
+    "preparacion": "Calentar leche con vainilla, disolver gelatina hidratada, enfriar y mezclar con clara batida y frutillas licuadas.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Leche Descremada",
+        "categoria_macro": "proteina",
+        "cantidad_numerica": 62.5,
+        "unidad_medida": "ml"
+      },
+      {
+        "nombre_comercial": "Frutillas Frescas",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.03,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Huevo",
+        "categoria_macro": "huevos_unidades",
+        "cantidad_numerica": 0.25,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Gelatina sin Sabor",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.003,
+        "unidad_medida": "kg"
+      }
+    ]
+  },
+  {
+    "nombre_receta": "Leche con Melón",
+    "tipo_comida": "Desayuno-Once",
+    "objetivo": "bajar_grasa",
+    "tiempo_estimado_minutos": 10,
+    "preparacion": "Licuar el melón fresco trozado junto con la leche descremada fría.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Melón Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.125,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Leche Descremada",
+        "categoria_macro": "proteina",
+        "cantidad_numerica": 250,
+        "unidad_medida": "ml"
+      }
+    ]
+  },
+  {
+    "nombre_receta": "Panqueques de Zapallo Italiano",
+    "tipo_comida": "Almuerzo",
+    "objetivo": "subir_masa",
+    "tiempo_estimado_minutos": 35,
+    "preparacion": "Hacer masa con zapallo rallado, huevo y harina, dorar en sartén y rellenar con champiñones y espárragos salteados.",
+    "ingredientes": [
+      {
+        "nombre_comercial": "Zapallito Italiano Entero",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.5,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Huevo",
+        "categoria_macro": "huevos_unidades",
+        "cantidad_numerica": 0.5,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Harina de Trigo",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.022,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Queso Rallado",
+        "categoria_macro": "proteina",
+        "cantidad_numerica": 0.007,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Champiñones Frescos",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.1,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Espárragos Frescos",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.1,
+        "unidad_medida": "kg"
+      },
+      {
+        "nombre_comercial": "Cebolla Entera",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 0.25,
+        "unidad_medida": "un"
+      },
+      {
+        "nombre_comercial": "Aceite Vegetal",
+        "categoria_macro": "carbohidrato",
+        "cantidad_numerica": 15,
+        "unidad_medida": "ml"
+      }
+    ]
   }
 ]
