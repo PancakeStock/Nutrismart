@@ -17,31 +17,39 @@ export function renderizarResultados(data, periodo = "semana") {
   document.getElementById("no-data").classList.add("hidden");
   document.getElementById("results").classList.remove("hidden");
 
-  // 1. CORREGIDO: Renderizar la Minuta Nutritiva (Lunes a Domingo)
+  // 1. CORREGIDO: Renderizar la Minuta Completa (Múltiples comidas por bloque diario)
   const dietaContainer = document.getElementById("dieta-container");
   dietaContainer.innerHTML = "";
 
-  // Ahora leemos el arreglo ordenado enviado por el backend
   if (data.minuta && data.minuta.length > 0) {
-    data.minuta.forEach((item) => {
-      dietaContainer.innerHTML += `
-        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 flex flex-col gap-1">
+    data.minuta.forEach((diaData) => {
+      let comidasHtml = "";
+      diaData.comidas.forEach((c) => {
+        comidasHtml += `
+          <div class="mt-3 border-t border-slate-100 pt-2.5">
             <div class="flex justify-between items-center">
-              <strong class="text-xs uppercase font-extrabold tracking-wide text-emerald-700">${item.dia} - ${item.tipo}</strong>
-              <span class="text-xs text-slate-400 font-bold">${item.tiempo}</span>
+              <strong class="text-[11px] uppercase font-extrabold tracking-wide" style="color: #003b27;">${c.tipo}</strong>
+              <span class="text-slate-400 text-xs font-semibold">⏱️ ${c.t} min</span>
             </div>
-            <span class="text-slate-800 text-sm font-bold mt-0.5">${item.plato}</span>
-            <p class="text-slate-600 text-xs italic mt-1 bg-white p-2 rounded-lg border border-slate-200/60">${item.preparacion}</p>
+            <span class="text-slate-800 text-sm font-bold block mt-0.5">${c.plato}</span>
+            <p class="text-slate-600 text-xs italic mt-1 bg-white p-2 rounded-lg border border-slate-200/60">${c.prep}</p>
+          </div>
+        `;
+      });
+
+      dietaContainer.innerHTML += `
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm mb-3">
+            <span class="text-xs font-extrabold tracking-wider text-slate-400 uppercase block">${diaData.dia}</span>
+            ${comidasHtml}
         </div>
       `;
     });
   }
 
-  // 2. CORREGIDO: Renderizar Lista de Compras Dinámica y Real desde el Backend
+  // 2. CORREGIDO: Renderizar Lista de Compras Real y Consolidada desde el Motor
   const listaContainer = document.getElementById("lista-compras-container");
   listaContainer.innerHTML = "";
 
-  // Iteramos sobre la lista real que nos envía el motor unificado
   if (data.lista_compras && data.lista_compras.length > 0) {
     data.lista_compras.forEach((prod) => {
       listaContainer.innerHTML += `
@@ -55,7 +63,7 @@ export function renderizarResultados(data, periodo = "semana") {
       `;
     });
   } else {
-    listaContainer.innerHTML = `<p class="text-xs text-slate-400 p-2">No se encontraron ingredientes para este plan.</p>`;
+    listaContainer.innerHTML = `<p class="text-xs text-slate-400 p-2">No se encontraron ingredientes consolidados.</p>`;
   }
 
   // 3. Tabla Comparativa

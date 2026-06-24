@@ -32,69 +32,46 @@ def cargar_recetas_por_objetivo(objetivo):
 
 def calcular_requerimiento_materiales(recetas_seleccionadas, duracion_dias=7):
     """
-    Consolida de manera exacta las necesidades brutas de la lista de compras 
-    agrupadas por ingrediente específico, escalándolas por los días del período.
+    Consolida de manera exacta las necesidades brutas de la lista de compras.
+    Simula una estructura balanceada diaria con múltiples comidas según el periodo.
     """
     consolidado_insumos = {}
     
-    # Suponiendo que repetimos el set de recetas seleccionadas cíclicamente para cubrir los días
-    num_recetas = len(recetas_seleccionadas)
-    if num_recetas == 0:
-        return {}
-        
-    for i in range(duracion_dias):
-        # Rotación de menús simulada para la composición de la canasta
-        receta = recetas_seleccionadas[i % num_recetas]
-        for ing in receta.get("ingredientes", []):
-            nombre = ing.get("nombre_comercial")
-            cantidad = float(ing.get("cantidad_numerica", 0))
-            unidad = ing.get("unidad_medida", "kg")
-            
-            if nombre not in consolidado_insumos:
-                consolidado_insumos[nombre] = {"cantidad": 0.0, "unidad": unidad}
-            
-            consolidado_insumos[nombre]["cantidad"] += cantidad
-            
-    return consolidado_insumos
+    # Clasificamos las recetas disponibles por su momento del día
+    desayunos = [r for r in recetas_seleccionadas if r.get("tipo_comida") == "Desayuno-Once"]
+    almuerzos = [r for r in recetas_seleccionadas if r.get("tipo_comida") == "Almuerzo"]
+    cenas = [r for r in recetas_seleccionadas if r.get("tipo_comida") == "Cena"]
 
-def calcular_requerimiento_materiales(recetas_seleccionadas, duracion_dias=7):
-    """
-    Consolida de manera exacta las necesidades brutas de la lista de compras 
-    agrupadas por ingrediente específico, escalándolas por los días del período.
-    """
-    consolidado_insumos = {}
-    
-    # Suponiendo que repetimos el set de recetas seleccionadas cíclicamente para cubrir los días
-    num_recetas = len(recetas_seleccionadas)
-    if num_recetas == 0:
-        return {}
-        
     for i in range(duracion_dias):
-        # Rotación de menús simulada para la composición de la canasta
-        receta = recetas_seleccionadas[i % num_recetas]
-        for ing in receta.get("ingredientes", []):
-            nombre = ing.get("nombre_comercial")
-            cantidad = float(ing.get("cantidad_numerica", 0))
-            unidad = ing.get("unidad_medida", "kg")
-            
-            if nombre not in consolidado_insumos:
-                consolidado_insumos[nombre] = {"cantidad": 0.0, "unidad": unidad}
-            
-            consolidado_insumos[nombre]["cantidad"] += cantidad
-            
+        menu_dia = []
+        if desayunos: menu_dia.append(desayunos[i % len(desayunos)])
+        if almuerzos: menu_dia.append(almuerzos[i % len(almuerzos)])
+        if cenas: menu_dia.append(cenas[i % len(cenas)])
+
+        for receta in menu_dia:
+            for ing in receta.get("ingredientes", []):
+                nombre = ing.get("nombre_comercial")
+                cantidad = float(ing.get("cantidad_numerica", 0))
+                unidad = ing.get("unidad_medida", "kg")
+                
+                if nombre not in consolidado_insumos:
+                    consolidado_insumos[nombre] = {"cantidad": 0.0, "unidad": unidad}
+                
+                consolidado_insumos[nombre]["cantidad"] += cantidad
+                
     return consolidado_insumos
 
 def calcular_costo_canasta_real(nombre_tienda, requerimientos_consolidados):
     """
-    Toma los requerimientos por producto y calcula el costo proporcional 
-    exacto basándose en las unidades de medida reales del catálogo de precios.
+    Calcula el costo real buscando por subcadenas e implementando 
+    formatos comerciales de inventariado mínimo en pesos chilenos.
     """
     ruta_json = os.path.join(os.path.dirname(__file__), 'data', 'precios_productos.json')
     try:
         with open(ruta_json, 'r', encoding='utf-8') as f:
             datos_precios = json.load(f)
     except Exception:
-        return 35000 # Fallback robusto en pesos chilenos
+        return 35000
 
     productos_tienda = datos_precios.get(nombre_tienda, [])
     costo_total = 0.0
@@ -103,33 +80,35 @@ def calcular_costo_canasta_real(nombre_tienda, requerimientos_consolidados):
         cantidad_necesaria = datos["cantidad"]
         unidad_receta = datos["unidad"]
         
-        # Búsqueda difusa o exacta en la matriz de precios del supermercado
-        prod_precio = next((p for p in productos_tienda if p.get("nombre") == nombre_ingrediente), None)
+        # Búsqueda flexible por subcadena para hacer match con los nombres del catálogo
+        prod_precio = next((p for p in productos_tienda if nombre_ingrediente.lower() in p.get("nombre", "").lower()), None)
         
-        # Si no está exacto, buscamos por categoría coincidente
+        # Fallback genérico por categoría si la subcadena falla
         if not prod_precio:
             prod_precio = next((p for p in productos_tienda if p.get("categoria") in nombre_ingrediente.lower()), None)
             
         if not prod_precio:
-            continue # Si no hay precio, no se suma (o se asume un costo base mínimo)
+            continue
             
         precio_catalogo = float(prod_precio["precio"])
         
-        # --- LÓGICA DE TRADUCCIÓN DE UNIDADES ---
-        if unidad_receta == "kg":
-            # Ya está en kg en tu JSON, multiplicación directa por el precio por kilo
-            costo_total += precio_catalogo * cantidad_necesaria
-        elif unidad_receta == "ml":
-            # El aceite/salsas suelen tasarse por Litro (1000 ml) en el catálogo de precios
-            costo_total += (precio_catalogo * (cantidad_necesaria / 1000.0))
-        elif unidad_receta == "un":
-            # Si el precio del JSON es por unidad (ej: un huevo) se multiplica directo. 
-            # Si el precio es por kilo (ej: cebollas), asumimos un peso promedio por unidad (0.15 kg)
+        # --- LOGICA DE TRADUCCIÓN A FORMATOS COMERCIALES ---
+        if unidad_receta == "un":
+            unidades_reales = math.ceil(cantidad_necesaria)
             if prod_precio.get("unidad_venta") == "kg":
-                peso_estimado_kg = cantidad_necesaria * 0.150 
-                costo_total += precio_catalogo * peso_estimado_kg
+                costo_total += precio_catalogo * (unidades_reales * 0.150)
+            else:
+                costo_total += precio_catalogo * unidades_reales
+                
+        elif unidad_receta == "kg":
+            if cantidad_necesaria < 0.200:
+                costo_total += precio_catalogo * 0.200
             else:
                 costo_total += precio_catalogo * cantidad_necesaria
+                
+        elif unidad_receta == "ml":
+            litros = max(0.250, cantidad_necesaria / 1000.0)
+            costo_total += precio_catalogo * litros
 
     return int(costo_total)
 
@@ -137,23 +116,31 @@ def optimizar_canasta(objetivo, user_lat, user_lng, periodo="semana"):
     recetas_filtradas = cargar_recetas_por_objetivo(objetivo)
     duracion_dias = 7 if periodo == "semana" else 30
     
-    # 1. Obtener la demanda acumulada exacta usando la nueva función reestructurada
     requerimientos_periodo = calcular_requerimiento_materiales(recetas_filtradas, duracion_dias)
     
-    # 2. Construcción dinámica del plan semanal (Lunes a Domingo) para la interfaz de Junaeb/INTA
+    # Construcción estructurada diaria multi-comida (Desayuno, Almuerzo y Cena)
     dias_semana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
-    minuta_semanal = []
+    desayunos = [r for r in recetas_filtradas if r.get("tipo_comida") == "Desayuno-Once"]
+    almuerzos = [r for r in recetas_filtradas if r.get("tipo_comida") == "Almuerzo"]
+    cenas = [r for r in recetas_filtradas if r.get("tipo_comida") == "Cena"]
     
-    for idx, dia in enumerate(dias_semana):
-        if idx < duracion_dias:
-            # Selecciona una receta de manera rotativa para simular la minuta variada
-            receta_dia = recetas_filtradas[idx % len(recetas_filtradas)] if recetas_filtradas else {}
+    minuta_semanal = []
+    for i, dia in enumerate(dias_semana):
+        if i < duracion_dias:
+            comidas_del_dia = []
+            if desayunos:
+                d = desayunos[i % len(desayunos)]
+                comidas_del_dia.append({"tipo": "Desayuno-Once", "plato": d["nombre_receta"], "prep": d["preparacion"], "t": d["tiempo_estimado_minutos"]})
+            if almuerzos:
+                a = almuerzos[i % len(almuerzos)]
+                comidas_del_dia.append({"tipo": "Almuerzo", "plato": a["nombre_receta"], "prep": a["preparacion"], "t": a["tiempo_estimado_minutos"]})
+            if cenas:
+                c = cenas[i % len(cenas)]
+                comidas_del_dia.append({"tipo": "Cena", "plato": c["nombre_receta"], "prep": c["preparacion"], "t": c["tiempo_estimado_minutos"]})
+                
             minuta_semanal.append({
                 "dia": dia,
-                "plato": receta_dia.get("nombre_receta", "Guiso Saludable INTA"),
-                "tipo": receta_dia.get("tipo_comida", "Almuerzo"),
-                "tiempo": f"⏱️ {receta_dia.get('tiempo_estimado_minutos')} min",
-                "preparacion": receta_dia.get("preparacion", "")
+                "comidas": comidas_del_dia
             })
 
     comparativa = []
@@ -171,7 +158,7 @@ def optimizar_canasta(objetivo, user_lat, user_lng, periodo="semana"):
         
         item = {
             "supermercado": tienda["nombre"],
-            "costo_mensual_estimado": costo_estimado, # Mantenemos key por compatibilidad con api.js
+            "costo_mensual_estimado": costo_estimado,
             "distancia_km": distancia
         }
         comparativa.append(item)
@@ -180,11 +167,22 @@ def optimizar_canasta(objetivo, user_lat, user_lng, periodo="semana"):
             mejor_score = score
             recomendacion = item
             
-    # Adjuntamos también la lista de compras consolidada limpia para el Checklist del frontend
-    lista_compras_limpia = [
-        {"ingrediente": k, "cantidad": round(v["cantidad"], 3), "unidad": v["unidad"]}
-        for k, v in requerimientos_periodo.items()
-    ]
+    # Formateo dinámico del consolidado de materiales para el checklist de UI
+    lista_compras_limpia = []
+    for k, v in requerimientos_periodo.items():
+        cant = v["cantidad"]
+        if v["unidad"] == "un":
+            cant = math.ceil(cant)
+        elif v["unidad"] == "kg":
+            cant = round(cant, 2)
+        else:
+            cant = round(cant, 1)
+            
+        lista_compras_limpia.append({
+            "ingrediente": k,
+            "cantidad": cant,
+            "unidad": v["unidad"]
+        })
             
     return {
         "minuta": minuta_semanal, 
