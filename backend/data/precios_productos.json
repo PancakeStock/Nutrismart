@@ -1,173 +1,926 @@
 {
   "Lider Expres de Grecia": [
     {
-      "nombre": "Pechuga de Pollo / Filetitos",
+      "nombre": "Coliflor Entera",
+      "precio": 1890,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Cebolla Entera",
+      "precio": 1490,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Almendras",
+      "precio": 12990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Pechuga de Pollo",
       "precio": 4590,
-      "categoria": "proteina"
+      "categoria": "proteina",
+      "unidad_venta": "kg"
     },
     {
-      "nombre": "Jurel en Conserva / Atún",
-      "precio": 1250,
-      "categoria": "proteina"
+      "nombre": "Cebollín Entero",
+      "precio": 890,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
     },
     {
-      "nombre": "Filete de Pescado Magro / Lapas",
-      "precio": 6990,
-      "categoria": "proteina"
+      "nombre": "Aceite Vegetal",
+      "precio": 1890,
+      "categoria": "carbohidrato",
+      "unidad_venta": "litro"
     },
     {
-      "nombre": "Quesillo Fresco / Queso Mantecoso",
-      "precio": 7490,
-      "categoria": "proteina"
+      "nombre": "Filete de Pescado Magro",
+      "precio": 6490,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
     },
     {
-      "nombre": "Leche Entera / Descremada Lider 1L",
-      "precio": 1050,
-      "categoria": "proteina"
+      "nombre": "Tomate Entero",
+      "precio": 1390,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
     },
     {
-      "nombre": "Yogurt Natural Lider",
-      "precio": 2890,
-      "categoria": "proteina"
+      "nombre": "Queso Mantecoso",
+      "precio": 7990,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
     },
     {
-      "nombre": "Avena / Harina / Masas / Pan Integral",
+      "nombre": "Salsa de Tomate",
+      "precio": 690,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Jugo de Limón",
       "precio": 1990,
-      "categoria": "carbohidrato"
+      "categoria": "carbohidrato",
+      "unidad_venta": "litro"
     },
     {
-      "nombre": "Mix Verduras / Tomate / Cebolla / Coliflor",
-      "precio": 2190,
-      "categoria": "carbohidrato"
+      "nombre": "Papa Entera",
+      "precio": 1190,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
     },
     {
-      "nombre": "Frutos Rojos / Duraznos / Melón / Piña",
-      "precio": 4290,
-      "categoria": "carbohidrato"
+      "nombre": "Albahaca Fresca",
+      "precio": 990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
     },
     {
-      "nombre": "Aceite Vegetal / Oliva / Salsas / Vinagre",
-      "precio": 3290,
-      "categoria": "carbohidrato"
+      "nombre": "Cebolla Morada",
+      "precio": 1690,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
     },
     {
-      "nombre": "Huevos Blancos Grandes Lider (Por Unidad)",
-      "precio": 195,
-      "categoria": "huevos_unidades"
+      "nombre": "Aceite de Oliva",
+      "precio": 5990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "litro"
+    },
+    {
+      "nombre": "Berenjena Entera",
+      "precio": 990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Zapallito Italiano Entero",
+      "precio": 790,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Ajo Entero",
+      "precio": 500,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Dientes de Dragón",
+      "precio": 3990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Lechuga Entera",
+      "precio": 990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Zanahoria Entera",
+      "precio": 1090,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Pan Integral",
+      "precio": 2490,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Atún en Conserva al Agua",
+      "precio": 1190,
+      "categoria": "proteina",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Palta Entera",
+      "precio": 3890,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Tortilla de Trigo",
+      "precio": 1690,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Piña en Conserva o Fresca",
+      "precio": 1490,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Huevo",
+      "precio": 190,
+      "categoria": "huevos_unidades",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Espinaca Fresca",
+      "precio": 4590,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Choclo en Grano",
+      "precio": 2990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Pan Marraqueta",
+      "precio": 1990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Porotos Verdes Congelados",
+      "precio": 3490,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Champiñones Frescos",
+      "precio": 5490,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Ají Verde",
+      "precio": 2500,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Jurel en Conserva",
+      "precio": 1390,
+      "categoria": "proteina",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Leche Entera",
+      "precio": 1050,
+      "categoria": "proteina",
+      "unidad_venta": "litro"
+    },
+    {
+      "nombre": "Salmón Fresco",
+      "precio": 14990,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Ulte Cocido",
+      "precio": 3990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Pimiento Entero",
+      "precio": 2990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Choritos Congelados o Frescos",
+      "precio": 4990,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Vino Blanco",
+      "precio": 2890,
+      "categoria": "carbohidrato",
+      "unidad_venta": "litro"
+    },
+    {
+      "nombre": "Leche Descremada",
+      "precio": 1050,
+      "categoria": "proteina",
+      "unidad_venta": "litro"
+    },
+    {
+      "nombre": "Yogurt Natural",
+      "precio": 2990,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Frutos Rojos Congelados",
+      "precio": 6990,
+      "categoria": "carbohidrato",
+      "盤unidad_venta": "kg"
+    },
+    {
+      "nombre": "Gelatina sin Sabor",
+      "precio": 14500,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Lapas Frescas",
+      "precio": 11990,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Frutillas Frescas",
+      "precio": 3890,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Melón Entero",
+      "precio": 1500,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Harina de Trigo",
+      "precio": 1100,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Queso Rallado",
+      "precio": 12990,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Espárragos Frescos",
+      "precio": 6490,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Quesillo Fresco",
+      "precio": 6990,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
     }
   ],
   "Jumbo Paseo Los Dominicos": [
     {
-      "nombre": "Pechuga de Pollo / Filetitos Jumbo",
-      "precio": 5490,
-      "categoria": "proteina"
+      "nombre": "Coliflor Entera",
+      "precio": 2290,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
     },
     {
-      "nombre": "Jurel en Conserva / Atún Premium",
+      "nombre": "Cebolla Entera",
+      "precio": 1790,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Almendras",
+      "precio": 15990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Pechuga de Pollo",
+      "precio": 5490,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Cebollín Entero",
+      "precio": 1090,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Aceite Vegetal",
+      "precio": 2190,
+      "categoria": "carbohidrato",
+      "unidad_venta": "litro"
+    },
+    {
+      "nombre": "Filete de Pescado Magro",
+      "precio": 7990,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Tomate Entero",
       "precio": 1690,
-      "categoria": "proteina"
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
     },
     {
-      "nombre": "Filete de Pescado Magro / Lapas Frescas",
-      "precio": 8990,
-      "categoria": "proteina"
+      "nombre": "Queso Mantecoso",
+      "precio": 9490,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
     },
     {
-      "nombre": "Quesillo Fresco / Queso Mantecoso Jumbo",
-      "precio": 8990,
-      "categoria": "proteina"
+      "nombre": "Salsa de Tomate",
+      "precio": 890,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
     },
     {
-      "nombre": "Leche Entera / Descremada Jumbo 1L",
-      "precio": 1190,
-      "categoria": "proteina"
-    },
-    {
-      "nombre": "Yogurt Natural Colun Jumbo",
-      "precio": 3490,
-      "categoria": "proteina"
-    },
-    {
-      "nombre": "Avena / Harina / Masas / Pan Integral Jumbo",
+      "nombre": "Jugo de Limón",
       "precio": 2490,
-      "categoria": "carbohidrato"
+      "categoria": "carbohidrato",
+      "unidad_venta": "litro"
     },
     {
-      "nombre": "Mix Verduras / Tomate / Cebolla / Coliflor",
-      "precio": 2890,
-      "categoria": "carbohidrato"
+      "nombre": "Papa Entera",
+      "precio": 1390,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
     },
     {
-      "nombre": "Frutos Rojos / Duraznos / Melón / Piña",
-      "precio": 5490,
-      "categoria": "carbohidrato"
+      "nombre": "Albahaca Fresca",
+      "precio": 1290,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
     },
     {
-      "nombre": "Aceite Vegetal / Oliva / Salsas / Vinagre",
-      "precio": 4190,
-      "categoria": "carbohidrato"
+      "nombre": "Cebolla Morada",
+      "precio": 1990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
     },
     {
-      "nombre": "Huevos de Gallina Libre Jumbo (Por Unidad)",
-      "precio": 225,
-      "categoria": "huevos_unidades"
+      "nombre": "Aceite de Oliva",
+      "precio": 7490,
+      "categoria": "carbohidrato",
+      "unidad_venta": "litro"
+    },
+    {
+      "nombre": "Berenjena Entera",
+      "precio": 1290,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Zapallito Italiano Entero",
+      "precio": 990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Ajo Entero",
+      "precio": 650,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Dientes de Dragón",
+      "precio": 4590,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Lechuga Entera",
+      "precio": 1290,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Zanahoria Entera",
+      "precio": 1290,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Pan Integral",
+      "precio": 2990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Atún en Conserva al Agua",
+      "precio": 1490,
+      "categoria": "proteina",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Palta Entera",
+      "precio": 4590,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Tortilla de Trigo",
+      "precio": 1990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Piña en Conserva o Fresca",
+      "precio": 1790,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Huevo",
+      "precio": 230,
+      "categoria": "huevos_unidades",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Espinaca Fresca",
+      "precio": 5290,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Choclo en Grano",
+      "precio": 3490,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Pan Marraqueta",
+      "precio": 2390,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Porotos Verdes Congelados",
+      "precio": 3990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Champiñones Frescos",
+      "precio": 6290,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Ají Verde",
+      "precio": 3200,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Jurel en Conserva",
+      "precio": 1690,
+      "categoria": "proteina",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Leche Entera",
+      "precio": 1190,
+      "categoria": "proteina",
+      "unidad_venta": "litro"
+    },
+    {
+      "nombre": "Salmón Fresco",
+      "precio": 16990,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Ulte Cocido",
+      "precio": 4590,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Pimiento Entero",
+      "precio": 3590,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Choritos Congelados o Frescos",
+      "precio": 5990,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Vino Blanco",
+      "precio": 3490,
+      "categoria": "carbohidrato",
+      "unidad_venta": "litro"
+    },
+    {
+      "nombre": "Leche Descremada",
+      "precio": 1190,
+      "categoria": "proteina",
+      "unidad_venta": "litro"
+    },
+    {
+      "nombre": "Yogurt Natural",
+      "precio": 3590,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Frutos Rojos Congelados",
+      "precio": 7990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Gelatina sin Sabor",
+      "precio": 16500,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Lapas Frescas",
+      "precio": 13990,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Frutillas Frescas",
+      "precio": 4490,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Melón Entero",
+      "precio": 1900,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Harina de Trigo",
+      "precio": 1300,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Queso Rallado",
+      "precio": 14990,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Espárragos Frescos",
+      "precio": 7290,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Quesillo Fresco",
+      "precio": 7990,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
     }
   ],
   "Unimarc Príncipe de Gales": [
     {
-      "nombre": "Pechuga de Pollo / Filetitos Unimarc",
+      "nombre": "Coliflor Entera",
+      "precio": 1990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Cebolla Entera",
+      "precio": 1590,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Almendras",
+      "precio": 13990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Pechuga de Pollo",
       "precio": 4990,
-      "categoria": "proteina"
+      "categoria": "proteina",
+      "unidad_venta": "kg"
     },
     {
-      "nombre": "Jurel en Conserva / Atún Van Camps",
+      "nombre": "Cebollín Entero",
+      "precio": 990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Aceite Vegetal",
+      "precio": 1990,
+      "categoria": "carbohidrato",
+      "unidad_venta": "litro"
+    },
+    {
+      "nombre": "Filete de Pescado Magro",
+      "precio": 6990,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Tomate Entero",
       "precio": 1490,
-      "categoria": "proteina"
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
     },
     {
-      "nombre": "Filete de Pescado Magro / Lapas Unimarc",
-      "precio": 7990,
-      "categoria": "proteina"
+      "nombre": "Queso Mantecoso",
+      "precio": 8490,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
     },
     {
-      "nombre": "Quesillo Fresco / Queso Mantecoso Unimarc",
-      "precio": 8190,
-      "categoria": "proteina"
+      "nombre": "Salsa de Tomate",
+      "precio": 750,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
     },
     {
-      "nombre": "Leche Entera / Descremada Soprole 1L",
-      "precio": 1120,
-      "categoria": "proteina"
-    },
-    {
-      "nombre": "Yogurt Natural Next Unimarc",
-      "precio": 3190,
-      "categoria": "proteina"
-    },
-    {
-      "nombre": "Avena / Harina / Masas / Pan Integral",
+      "nombre": "Jugo de Limón",
       "precio": 2190,
-      "categoria": "carbohidrato"
+      "categoria": "carbohidrato",
+      "unidad_venta": "litro"
     },
     {
-      "nombre": "Mix Verduras / Tomate / Cebolla / Coliflor",
-      "precio": 2490,
-      "categoria": "carbohidrato"
+      "nombre": "Papa Entera",
+      "precio": 1250,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
     },
     {
-      "nombre": "Frutos Rojos / Duraznos / Melón / Piña",
-      "precio": 4890,
-      "categoria": "carbohidrato"
+      "nombre": "Albahaca Fresca",
+      "precio": 1090,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
     },
     {
-      "nombre": "Aceite Vegetal / Oliva / Salsas / Vinagre",
-      "precio": 3790,
-      "categoria": "carbohidrato"
+      "nombre": "Cebolla Morada",
+      "precio": 1790,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
     },
     {
-      "nombre": "Huevos Medianos Unimarc (Por Unidad)",
+      "nombre": "Aceite de Oliva",
+      "precio": 6490,
+      "categoria": "carbohidrato",
+      "unidad_venta": "litro"
+    },
+    {
+      "nombre": "Berenjena Entera",
+      "precio": 1090,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Zapallito Italiano Entero",
+      "precio": 850,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Ajo Entero",
+      "precio": 550,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Dientes de Dragón",
+      "precio": 4190,
+      "categoria": "carbohidrato",
+      "盤unidad_venta": "kg"
+    },
+    {
+      "nombre": "Lechuga Entera",
+      "precio": 1090,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Zanahoria Entera",
+      "precio": 1190,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Pan Integral",
+      "precio": 2690,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Atún en Conserva al Agua",
+      "precio": 1290,
+      "categoria": "proteina",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Palta Entera",
+      "precio": 4190,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Tortilla de Trigo",
+      "precio": 1790,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Piña en Conserva o Fresca",
+      "precio": 1590,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Huevo",
       "precio": 205,
-      "categoria": "huevos_unidades"
+      "categoria": "huevos_unidades",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Espinaca Fresca",
+      "precio": 4890,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Choclo en Grano",
+      "precio": 3190,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Pan Marraqueta",
+      "precio": 2100,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Porotos Verdes Congelados",
+      "precio": 3690,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Champiñones Frescos",
+      "precio": 5790,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Ají Verde",
+      "precio": 2800,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Jurel en Conserva",
+      "precio": 1490,
+      "categoria": "proteina",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Leche Entera",
+      "precio": 1120,
+      "categoria": "proteina",
+      "unidad_venta": "litro"
+    },
+    {
+      "nombre": "Salmón Fresco",
+      "precio": 15990,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Ulte Cocido",
+      "precio": 4190,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Pimiento Entero",
+      "precio": 3290,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Choritos Congelados o Frescos",
+      "precio": 5490,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Vino Blanco",
+      "precio": 3190,
+      "categoria": "carbohidrato",
+      "unidad_venta": "litro"
+    },
+    {
+      "nombre": "Leche Descremada",
+      "precio": 1120,
+      "categoria": "proteina",
+      "unidad_venta": "litro"
+    },
+    {
+      "nombre": "Yogurt Natural",
+      "precio": 3190,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Frutos Rojos Congelados",
+      "precio": 7390,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Gelatina sin Sabor",
+      "precio": 15500,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Lapas Frescas",
+      "precio": 12990,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Frutillas Frescas",
+      "precio": 4190,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Melón Entero",
+      "precio": 1700,
+      "categoria": "carbohidrato",
+      "unidad_venta": "un"
+    },
+    {
+      "nombre": "Harina de Trigo",
+      "precio": 1200,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Queso Rallado",
+      "precio": 13990,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Espárragos Frescos",
+      "precio": 6890,
+      "categoria": "carbohidrato",
+      "unidad_venta": "kg"
+    },
+    {
+      "nombre": "Quesillo Fresco",
+      "precio": 7490,
+      "categoria": "proteina",
+      "unidad_venta": "kg"
     }
   ]
 }
