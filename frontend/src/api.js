@@ -3,21 +3,19 @@ import { actualizarEstadoConexion, renderizarResultados } from "./ui.js";
 
 const API_URL = "https://nutrismart-backend-chqy.onrender.com";
 
-// Inicializar servicios nativos
 iniciarGeolocalizacion();
 
-// Monitorear salud del servidor al cargar la página
 fetch(`${API_URL}/api/health`)
   .then((res) => res.json())
   .then(() => actualizarEstadoConexion("online"))
   .catch(() => actualizarEstadoConexion("error"));
 
-// Manejar el envío del formulario
 document.getElementById("diet-form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const objetivo = document.getElementById("objetivo").value;
   const presupuesto = document.getElementById("presupuesto").value;
+  const periodo = document.getElementById("periodo").value;
   const btn = e.target.querySelector("button");
 
   btn.innerText = "Calculando Ingeniería de Precios...";
@@ -30,13 +28,14 @@ document.getElementById("diet-form").addEventListener("submit", async (e) => {
       body: JSON.stringify({
         objetivo: objetivo,
         presupuesto: presupuesto,
+        periodo: periodo,
         lat: userCoords.lat,
         lng: userCoords.lng,
       }),
     });
 
     const data = await response.json();
-    renderizarResultados(data);
+    renderizarResultados(data, periodo);
   } catch (err) {
     alert("Hubo un problema al conectar con el motor matemático en Render.");
   } finally {

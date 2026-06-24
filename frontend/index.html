@@ -1,4 +1,4 @@
-<!DOCTYPE doctype html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -10,9 +10,9 @@
         theme: {
           extend: {
             colors: {
-              nutriDark: "#003b27" /* Verde pino para botones / textos */,
-              nutriLime: "#b4f15a" /* Verde lima oficial de tus láminas */,
-              nutriLight: "#f8fafc" /* Fondo limpio estilo Carriapp */,
+              nutriDark: "#003b27",
+              nutriLime: "#b4f15a",
+              nutriLight: "#f8fafc",
             },
           },
         },
@@ -72,13 +72,11 @@
             >
           </div>
         </div>
-
         <div
           class="hidden md:flex items-center gap-2 text-sm font-semibold text-white/90"
         >
           <span>Come mejor. Gasta menos. Desperdicia nada.</span>
         </div>
-
         <div
           class="flex items-center gap-2 bg-[#002518] px-4 py-2 rounded-full border border-emerald-950"
         >
@@ -126,7 +124,21 @@
           <div>
             <label
               class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5"
-              >Presupuesto Mensual ($ CLP)</label
+              >Duración del Plan</label
+            >
+            <select
+              id="periodo"
+              class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-700 font-medium focus:outline-none focus:border-nutriDark focus:ring-2 focus:ring-nutriDark/10 transition-all"
+            >
+              <option value="semana">📅 Planificación Semanal (7 días)</option>
+              <option value="mes">📆 Planificación Mensual (30 días)</option>
+            </select>
+          </div>
+
+          <div>
+            <label
+              class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5"
+              >Presupuesto Máximo ($ CLP)</label
             >
             <div class="relative">
               <span class="absolute left-4 top-3.5 text-slate-400 font-bold"
@@ -190,7 +202,8 @@
           </p>
           <p class="text-xs max-w-sm">
             Haz clic en el botón de la izquierda. El sistema usará tu
-            geolocalización para cotizar de inmediato en las cadenas chilenas.
+            geolocalización para cotizar en tiempo real en las sucursales de
+            Peñalolén.
           </p>
         </div>
 
@@ -202,12 +215,34 @@
               class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2"
             >
               <span
-                class="w-2 h-5 bg-nutriLime rounded-full block"
+                class="w-2 h-5 rounded-full block"
                 style="background-color: #b4f15a"
               ></span>
-              Minuta Semanal Sugerida
+              Minuta y Preparaciones del Libro (INTA)
             </h3>
             <div id="dieta-container" class="grid sm:grid-cols-2 gap-3"></div>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm"
+          >
+            <h3
+              class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2"
+            >
+              <span
+                class="w-2 h-5 rounded-full block"
+                style="background-color: #003b27"
+              ></span>
+              Tu Lista de Compras Optimizada
+            </h3>
+            <p class="text-xs text-slate-400 mb-4">
+              Cantidades netas calculadas para cumplir el objetivo del periodo
+              completo:
+            </p>
+            <div
+              id="lista-compras-container"
+              class="grid sm:grid-cols-3 gap-3"
+            ></div>
           </div>
 
           <div
@@ -217,7 +252,7 @@
               class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2"
             >
               <span
-                class="w-2 h-5 bg-nutriLime rounded-full block"
+                class="w-2 h-5 rounded-full block"
                 style="background-color: #b4f15a"
               ></span>
               Análisis Comparativo de Cadenas (CL)
@@ -229,7 +264,7 @@
                     class="border-b border-slate-200 text-slate-400 text-xs font-bold uppercase tracking-wider"
                   >
                     <th class="pb-3">Supermercado</th>
-                    <th class="pb-3 text-right">Costo Mensual Proporcional</th>
+                    <th class="pb-3 text-right">Costo Estimado Periodo</th>
                     <th class="pb-3 text-right">Distancia</th>
                   </tr>
                 </thead>
@@ -263,9 +298,6 @@
         </div>
       </section>
     </main>
-
-<script type="module" src="./src/api.js"></script>
-  </body>
-</html>
+    <script type="module" src="./src/api.js"></script>
   </body>
 </html>
