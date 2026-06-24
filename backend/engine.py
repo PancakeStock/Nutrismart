@@ -50,7 +50,7 @@ def calcular_requerimiento_materiales(recetas, duracion_dias=7):
 
 def calcular_costo_canasta_real(nombre_tienda, requerimientos):
     """
-    Toma el requerimiento neto y calcula el costo proporcional 
+    Toma el requerimiento neto (en gramos y unidades) y calcula el costo proporcional 
     basándose en el precio de empaque por kilo/unidad base del JSON de precios.
     """
     ruta_json = os.path.join(os.path.dirname(__file__), 'data', 'precios_productos.json')
@@ -58,18 +58,27 @@ def calcular_costo_canasta_real(nombre_tienda, requerimientos):
         with open(ruta_json, 'r', encoding='utf-8') as f:
             datos_precios = json.load(f)
     except Exception:
-        return 45000 # Fallback básico preventivo
+        return 45000 # Fallback básico preventivo ante eventos catastróficos
 
     productos_tienda = datos_precios.get(nombre_tienda, [])
-    costo_total = 0
+    costo_total = 0.0
 
     for cat, cantidad_necesaria in requerimientos.items():
-        for prod in productos_tienda:
-            if prod.get("categoria") == cat:
-                precio_comercial_base = prod["precio"]
-                # Costeo Proporcional de Inventario: Precio comercial * Fracción exacta consumida
-                costo_total += precio_comercial_base * cantidad_necesaria
-                break
+        # Encontrar el producto correspondiente a la categoría macro
+        prod = next((p for p in productos_tienda if p.get("categoria") == cat), None)
+        if not prod:
+            continue
+            
+        precio_comercial_base = float(prod["precio"])
+        
+        # --- EXPLOSIÓN Y CONVERSIÓN DE MATERIALES (MRP) ---
+        if cat in ["proteina", "carbohidrato"]:
+            # Convertimos gramos de consumo neto acumulado a Kilogramos de compra
+            cantidad_en_kilos = cantidad_necesaria / 1000.0
+            costo_total += precio_comercial_base * cantidad_en_kilos
+        elif cat == "huevos_unidades":
+            # Los huevos ya vienen en unidades físicas unitarias
+            costo_total += precio_comercial_base * cantidad_necesaria
 
     return int(costo_total)
 
