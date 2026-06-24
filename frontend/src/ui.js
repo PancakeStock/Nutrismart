@@ -52,12 +52,16 @@ export function renderizarResultados(data, periodo = "semana") {
 
   if (data.lista_compras && data.lista_compras.length > 0) {
     data.lista_compras.forEach((prod) => {
+      const etiqueta = prod.etiqueta
+        ? `<span class="text-[10px] text-slate-400 font-semibold uppercase tracking-wide mt-0.5 block">${prod.etiqueta}</span>`
+        : "";
       listaContainer.innerHTML += `
         <label class="flex items-center gap-3 p-3 bg-slate-50 border border-slate-100 rounded-xl cursor-pointer hover:bg-slate-100 transition-all select-none">
-          <input type="checkbox" class="w-4 h-4 rounded text-nutriDark focus:ring-nutriDark border-slate-300">
+          <input type="checkbox" class="w-4 h-4 rounded text-nutriDark focus:ring-nutriDark border-slate-300 flex-shrink-0">
           <div>
             <span class="text-xs text-slate-400 block uppercase font-bold tracking-tight">Comprar</span>
-            <span class="text-sm font-bold text-slate-800">${prod.cantidad} ${prod.unidad} de ${prod.ingrediente}</span>
+            <span class="text-sm font-bold text-slate-800">${prod.cantidad} ${prod.unidad} · ${prod.ingrediente}</span>
+            ${etiqueta}
           </div>
         </label>
       `;

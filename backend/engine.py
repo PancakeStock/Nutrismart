@@ -287,46 +287,145 @@ def calcular_costo_canasta(
 # ---------------------------------------------------------------------------
 # CAPA 5: CONSTRUCCIÓN DE LISTA DE COMPRAS PARA EL FRONTEND
 # ---------------------------------------------------------------------------
+#
+# EMPAQUES_MINIMOS_CL
+# -------------------
+# Define el empaque vendible mínimo real en el retail chileno para cada
+# ingrediente, expresado en la misma unidad que usa el catálogo (unidad_venta).
+#
+# Estructura de cada entrada:
+#   "Nombre Ingrediente": {
+#       "empaque_min":  <float>   cantidad mínima del empaque,
+#       "unidad":       <str>     unidad del empaque ("kg", "L", "un", "ml"),
+#       "etiqueta":     <str>     texto legible para el usuario,
+#   }
+#
+# Regla de uso:
+#   cantidad_a_comprar = max(empaque_min, ceil(cant_neta / empaque_min) * empaque_min)
+# ---------------------------------------------------------------------------
+
+EMPAQUES_MINIMOS_CL = {
+    # --- ACEITES Y LÍQUIDOS ---
+    "Aceite Vegetal":           {"empaque_min": 0.900,  "unidad": "L",  "etiqueta": "botella 900 ml"},
+    "Aceite de Oliva":          {"empaque_min": 0.500,  "unidad": "L",  "etiqueta": "botella 500 ml"},
+    "Jugo de Limón":            {"empaque_min": 0.500,  "unidad": "L",  "etiqueta": "botella 500 ml"},
+    "Vino Blanco":              {"empaque_min": 0.375,  "unidad": "L",  "etiqueta": "botella 375 ml"},
+    "Leche Descremada":         {"empaque_min": 1.000,  "unidad": "L",  "etiqueta": "caja 1 litro"},
+    "Leche Entera":             {"empaque_min": 1.000,  "unidad": "L",  "etiqueta": "caja 1 litro"},
+    "Salsa de Tomate":          {"empaque_min": 1.000,  "unidad": "un", "etiqueta": "lata/tetra 210 ml"},
+
+    # --- VERDURAS Y HORTALIZAS vendidas por kg ---
+    "Palta Entera":             {"empaque_min": 0.200,  "unidad": "kg", "etiqueta": "unidad (~200 g)"},
+    "Almendras":                {"empaque_min": 0.200,  "unidad": "kg", "etiqueta": "bolsa 200 g"},
+    "Dientes de Dragón":        {"empaque_min": 0.100,  "unidad": "kg", "etiqueta": "bandeja 100 g"},
+    "Champiñones Frescos":      {"empaque_min": 0.200,  "unidad": "kg", "etiqueta": "bandeja 200 g"},
+    "Espinaca Fresca":          {"empaque_min": 0.200,  "unidad": "kg", "etiqueta": "bolsa 200 g"},
+    "Espárragos Frescos":       {"empaque_min": 0.250,  "unidad": "kg", "etiqueta": "atado 250 g"},
+    "Porotos Verdes Congelados":{"empaque_min": 0.400,  "unidad": "kg", "etiqueta": "bolsa 400 g"},
+    "Frutos Rojos Congelados":  {"empaque_min": 0.300,  "unidad": "kg", "etiqueta": "bolsa 300 g"},
+    "Frutillas Frescas":        {"empaque_min": 0.500,  "unidad": "kg", "etiqueta": "bandeja 500 g"},
+    "Choclo en Grano":          {"empaque_min": 0.300,  "unidad": "kg", "etiqueta": "bolsa 300 g"},
+    "Pan Integral":             {"empaque_min": 0.500,  "unidad": "kg", "etiqueta": "bolsa 500 g (molde)"},
+    "Pan Marraqueta":           {"empaque_min": 0.200,  "unidad": "kg", "etiqueta": "2 unidades ≈ 200 g"},
+    "Papa Entera":              {"empaque_min": 1.000,  "unidad": "kg", "etiqueta": "bolsa 1 kg"},
+    "Harina de Trigo":          {"empaque_min": 1.000,  "unidad": "kg", "etiqueta": "bolsa 1 kg"},
+    "Tomate Entero":            {"empaque_min": 0.500,  "unidad": "kg", "etiqueta": "bolsa ≈ 3 unidades"},
+    "Cebolla Entera":           {"empaque_min": 0.500,  "unidad": "kg", "etiqueta": "bolsa malla 500 g"},
+    "Cebolla Morada":           {"empaque_min": 0.500,  "unidad": "kg", "etiqueta": "bolsa malla 500 g"},
+    "Zanahoria Entera":         {"empaque_min": 0.500,  "unidad": "kg", "etiqueta": "bolsa 500 g"},
+    "Ají Verde":                {"empaque_min": 0.100,  "unidad": "kg", "etiqueta": "bolsita 100 g"},
+    "Pimiento Entero":          {"empaque_min": 0.200,  "unidad": "kg", "etiqueta": "unidad ≈ 200 g"},
+    "Ulte Cocido":              {"empaque_min": 0.200,  "unidad": "kg", "etiqueta": "bandeja 200 g"},
+    "Lapas Frescas":            {"empaque_min": 0.500,  "unidad": "kg", "etiqueta": "bandeja 500 g"},
+    "Choritos Congelados o Frescos": {"empaque_min": 0.500, "unidad": "kg", "etiqueta": "bolsa 500 g"},
+    "Filete de Pescado Magro":  {"empaque_min": 0.400,  "unidad": "kg", "etiqueta": "bandeja ≈ 400 g"},
+    "Salmón Fresco":            {"empaque_min": 0.300,  "unidad": "kg", "etiqueta": "filete ≈ 300 g"},
+    "Pechuga de Pollo":         {"empaque_min": 0.500,  "unidad": "kg", "etiqueta": "bandeja ≈ 500 g"},
+    "Gelatina sin Sabor":       {"empaque_min": 0.007,  "unidad": "kg", "etiqueta": "sobre 7 g"},
+    "Yogurt Natural":           {"empaque_min": 0.150,  "unidad": "kg", "etiqueta": "pote 150 g"},
+    "Queso Mantecoso":          {"empaque_min": 0.200,  "unidad": "kg", "etiqueta": "trozo 200 g"},
+    "Queso Rallado":            {"empaque_min": 0.100,  "unidad": "kg", "etiqueta": "bolsa 100 g"},
+    "Quesillo Fresco":          {"empaque_min": 0.200,  "unidad": "kg", "etiqueta": "pote 200 g"},
+
+    # --- VENDIDOS POR UNIDAD (precio/un) ---
+    "Huevo":                    {"empaque_min": 6.000,  "unidad": "un", "etiqueta": "cartón 6 unidades"},
+    "Cebollín Entero":          {"empaque_min": 1.000,  "unidad": "un", "etiqueta": "manojo"},
+    "Coliflor Entera":          {"empaque_min": 1.000,  "unidad": "un", "etiqueta": "unidad"},
+    "Berenjena Entera":         {"empaque_min": 1.000,  "unidad": "un", "etiqueta": "unidad"},
+    "Zapallito Italiano Entero":{"empaque_min": 1.000,  "unidad": "un", "etiqueta": "unidad"},
+    "Ajo Entero":               {"empaque_min": 1.000,  "unidad": "un", "etiqueta": "cabeza"},
+    "Lechuga Entera":           {"empaque_min": 1.000,  "unidad": "un", "etiqueta": "unidad"},
+    "Melón Entero":             {"empaque_min": 1.000,  "unidad": "un", "etiqueta": "unidad"},
+    "Albahaca Fresca":          {"empaque_min": 1.000,  "unidad": "un", "etiqueta": "manojo"},
+    "Atún en Conserva al Agua": {"empaque_min": 1.000,  "unidad": "un", "etiqueta": "lata 170 g"},
+    "Jurel en Conserva":        {"empaque_min": 1.000,  "unidad": "un", "etiqueta": "lata 170 g"},
+    "Tortilla de Trigo":        {"empaque_min": 1.000,  "unidad": "un", "etiqueta": "paquete"},
+    "Piña en Conserva o Fresca":{"empaque_min": 1.000,  "unidad": "un", "etiqueta": "lata/unidad"},
+    "Salsa de Tomate":          {"empaque_min": 1.000,  "unidad": "un", "etiqueta": "lata/tetra 210 ml"},
+}
+
 
 def _formatear_cantidad_compra(nombre: str, cant_neta: float, unidad_receta: str) -> dict:
     """
-    Convierte la cantidad neta de receta a un formato de compra legible
-    (empaque comercial real, no fracción de receta).
+    Convierte la cantidad neta de receta al empaque comercial mínimo
+    real del retail chileno. Siempre redondea hacia ARRIBA al múltiplo
+    del empaque mínimo necesario para cubrir la receta.
+
+    Ejemplo: necesito 0.24 kg de pan integral → vendo en bolsas de 500g
+             → resultado: 1 bolsa (500 g)
     """
-    unidad_display = unidad_receta
+    empaque = EMPAQUES_MINIMOS_CL.get(nombre)
 
-    if unidad_receta == "un":
-        cantidad_display = math.ceil(cant_neta)
-
-    elif unidad_receta == "kg":
-        # Si el catálogo lo vende por unidad, informamos cuántas unidades
-        if nombre in PESO_PROMEDIO_UN:
-            peso_un = PESO_PROMEDIO_UN[nombre]
-            cantidad_display = math.ceil(cant_neta / peso_un)
-            unidad_display = "un"
+    if empaque is None:
+        # Fallback genérico si el ingrediente no está en la tabla
+        if unidad_receta == "un":
+            return {"ingrediente": nombre, "cantidad": math.ceil(cant_neta), "unidad": "un", "etiqueta": "unidades"}
+        elif unidad_receta == "ml":
+            if cant_neta < 500:
+                return {"ingrediente": nombre, "cantidad": 500, "unidad": "ml", "etiqueta": "envase 500 ml"}
+            return {"ingrediente": nombre, "cantidad": round(cant_neta / 1000, 2), "unidad": "L", "etiqueta": "envase"}
         else:
-            cantidad_display = round(cant_neta, 3)
+            return {"ingrediente": nombre, "cantidad": max(0.200, round(cant_neta, 3)), "unidad": "kg", "etiqueta": "a granel"}
 
-    elif unidad_receta == "ml":
-        # Mostramos en litros si supera 1L, si no en ml
-        if nombre in ML_POR_UN:
-            envases = max(1, math.ceil(cant_neta / ML_POR_UN[nombre]))
-            cantidad_display = envases
-            unidad_display = "un"
-        elif cant_neta >= 500:
-            cantidad_display = round(cant_neta / 1000, 2)
-            unidad_display = "L"
-        else:
-            cantidad_display = round(cant_neta, 1)
-            unidad_display = "ml"
+    emp_min = empaque["empaque_min"]
+    unidad  = empaque["unidad"]
+    etiq    = empaque["etiqueta"]
 
+    # Convertir cant_neta a la misma unidad del empaque antes de comparar
+    if unidad_receta == "ml" and unidad == "L":
+        # receta en ml, empaque en litros
+        cant_en_unidad_empaque = cant_neta / 1000.0
+    elif unidad_receta == "ml" and unidad == "un":
+        # receta en ml, empaque vendido como unidad (lata, tetra)
+        ml_por_envase = ML_POR_UN.get(nombre, 200.0)
+        cant_en_unidad_empaque = cant_neta / ml_por_envase
+    elif unidad_receta == "un" and unidad == "kg":
+        # receta en unidades, empaque por kg (tomate, cebolla, etc.)
+        peso_kg = PESO_UN_EN_KG.get(nombre, 0.150)
+        cant_en_unidad_empaque = cant_neta * peso_kg
+    elif unidad_receta == "kg" and unidad == "un":
+        # receta en kg, empaque por unidad (coliflor, manojo albahaca)
+        peso_un = PESO_PROMEDIO_UN.get(nombre, 0.200)
+        cant_en_unidad_empaque = cant_neta / peso_un
     else:
-        cantidad_display = round(cant_neta, 2)
+        # unidades idénticas (kg/kg, un/un, L/L)
+        cant_en_unidad_empaque = cant_neta
+
+    # Cuántos empaques mínimos necesito para cubrir la cantidad neta
+    n_empaques = max(1, math.ceil(cant_en_unidad_empaque / emp_min))
+    cantidad_compra = n_empaques * emp_min
+
+    # Redondear para presentación limpia
+    if unidad in ("L", "kg"):
+        cantidad_compra = round(cantidad_compra, 3)
+    else:
+        cantidad_compra = int(cantidad_compra)
 
     return {
         "ingrediente": nombre,
-        "cantidad":    cantidad_display,
-        "unidad":      unidad_display,
+        "cantidad":    cantidad_compra,
+        "unidad":      unidad,
+        "etiqueta":    etiq,
     }
 
 
