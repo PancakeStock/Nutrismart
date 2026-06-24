@@ -256,7 +256,7 @@
       "nombre": "Frutos Rojos Congelados",
       "precio": 6990,
       "categoria": "carbohidrato",
-      "盤unidad_venta": "kg"
+      "unidad_venta": "kg"
     },
     {
       "nombre": "Gelatina sin Sabor",
@@ -728,7 +728,7 @@
       "nombre": "Dientes de Dragón",
       "precio": 4190,
       "categoria": "carbohidrato",
-      "盤unidad_venta": "kg"
+      "unidad_venta": "kg"
     },
     {
       "nombre": "Lechuga Entera",
