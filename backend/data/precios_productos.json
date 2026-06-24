@@ -1,0 +1,53 @@
+{
+  "Lider Cordillera": [
+    {
+      "nombre": "Pechuga de Pollo deshuesada 1kg",
+      "precio": 4590,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Avena Integral Instantánea 1kg",
+      "precio": 1990,
+      "categoria": "carbohidrato"
+    },
+    {
+      "nombre": "Huevos Grandes Blancos 30 uds",
+      "precio": 200,
+      "categoria": "huevos_unidades"
+    }
+  ],
+  "Jumbo Bilbao": [
+    {
+      "nombre": "Pechuga de Pollo deshuesada 1kg",
+      "precio": 5490,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Avena Integral Instantánea 1kg",
+      "precio": 2490,
+      "categoria": "carbohidrato"
+    },
+    {
+      "nombre": "Huevos Grandes Blancos 30 uds",
+      "precio": 230,
+      "categoria": "huevos_unidades"
+    }
+  ],
+  "Unimarc Los Leones": [
+    {
+      "nombre": "Pechuga de Pollo deshuesada 1kg",
+      "precio": 4990,
+      "categoria": "proteina"
+    },
+    {
+      "nombre": "Avena Integral Instantánea 1kg",
+      "precio": 2190,
+      "categoria": "carbohidrato"
+    },
+    {
+      "nombre": "Huevos Grandes Blancos 30 uds",
+      "precio": 210,
+      "categoria": "huevos_unidades"
+    }
+  ]
+}
